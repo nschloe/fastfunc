@@ -8,28 +8,27 @@
 
 namespace py = pybind11;
 
-py::array_t<int>
+void
 add_at(
-    py::array_t<int> array,
-    py::array_t<int> idx,
-    py::array_t<int> vals
+    py::array_t<int64_t> array,
+    py::array_t<int64_t> idx,
+    py::array_t<int64_t> vals
     )
 {
-  auto buf0 = array.request();
+  auto r = array.mutable_unchecked<1>();
   auto buf1 = idx.request();
   auto buf2 = vals.request();
 
   if (buf1.size != buf2.size)
     throw std::runtime_error("Input shapes must match");
 
-  int *ptr0 = (int *) buf0.ptr;
-  int *ptr1 = (int *) buf1.ptr;
-  int *ptr2 = (int *) buf2.ptr;
+  int64_t *ptr1 = (int64_t *) buf1.ptr;
+  int64_t *ptr2 = (int64_t *) buf2.ptr;
 
-  for (int k = 0; k < buf1.shape[0]; k++)
-      ptr0[ptr1[k]] += ptr2[k];
+  for (ssize_t k=0; k < buf1.shape[0]; k++)
+    r(ptr1[k]) += ptr2[k];
 
-  return array;
+  return;
 }
 
 #endif // ADD_AT_HPP

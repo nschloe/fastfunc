@@ -5,6 +5,6 @@
 
 namespace py = pybind11;
 
-PYBIND11_MODULE(_voropy, m) {
-    m.def("add_at", &add_at);
+PYBIND11_MODULE(_fastfunc, m) {
+  m.def("add_at", &add_at);
 }
