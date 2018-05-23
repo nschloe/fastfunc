@@ -1,11 +1,13 @@
 # -*- coding: utf-8 -*-
 #
 import numpy
+import pytest
 
 import fastfunc
 
 
-def test_add():
+
+def test_add_int():
     numpy.random.seed(123)
 
     a0 = numpy.zeros(10, dtype=int)
@@ -20,5 +22,23 @@ def test_add():
     return
 
 
+def test_add_float():
+    numpy.random.seed(123)
+
+    a0 = numpy.zeros(10)
+    k = numpy.random.randint(10, size=5)
+    v = numpy.random.rand(5)
+    numpy.add.at(a0, k, v)
+
+    a1 = numpy.zeros(10)
+    fastfunc.add_at(a1, k, v)
+
+    print(a0)
+    print(a1)
+
+    assert numpy.all(a0 == a1)
+    return
+
+
 if __name__ == '__main__':
-    test_add()
+    test_add_float()
