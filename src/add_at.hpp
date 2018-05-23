@@ -25,7 +25,7 @@ add_at_int(
   int64_t *ptr1 = (int64_t *) buf1.ptr;
   int64_t *ptr2 = (int64_t *) buf2.ptr;
 
-  for (ssize_t k=0; k < buf1.shape[0]; k++)
+  for (ssize_t k=0; k < buf1.size; k++)
     r(ptr1[k]) += ptr2[k];
 
   return;
@@ -48,7 +48,7 @@ add_at_double(
   int64_t *ptr1 = (int64_t *) buf1.ptr;
   double *ptr2 = (double *) buf2.ptr;
 
-  for (ssize_t k=0; k < buf1.shape[0]; k++)
+  for (ssize_t k=0; k < buf1.size; k++)
     r(ptr1[k]) += ptr2[k];
 
   return;
