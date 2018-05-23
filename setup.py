@@ -14,6 +14,7 @@ with open(os.path.join(base_dir, 'fastfunc', '__about__.py'), 'rb') as f:
     exec(f.read(), about)
 
 
+# pylint: disable=too-few-public-methods
 class get_pybind_include(object):
     '''Helper class to determine the pybind11 include path
     The purpose of this class is to postpone importing pybind11
