@@ -6,6 +6,6 @@
 namespace py = pybind11;
 
 PYBIND11_MODULE(_fastfunc, m) {
-  m.def("add_at", &add_at_int);
-  m.def("add_at", &add_at_double);
+  m.def("_add_at", &add_at_int);
+  m.def("_add_at", &add_at_double);
 }
