@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 #
 
-# pylint: disable=wildcard-import
 from _fastfunc import _add_at
 
 

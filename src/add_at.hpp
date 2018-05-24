@@ -21,10 +21,10 @@ add_at_int(
   auto r3 = vals.unchecked<2>();
 
   if (r2.shape(0) != r3.shape(0))
-    throw std::runtime_error("Input shapes must match 1");
+    throw std::runtime_error("Input shapes must match");
 
   if (r1.shape(1) != r3.shape(1))
-    throw std::runtime_error("Input shapes must match 2");
+    throw std::runtime_error("Input shapes must match");
 
   for (ssize_t k=0; k < r2.shape(0); k++)
     for (ssize_t j=0; j < r1.shape(1); j++)
@@ -45,10 +45,10 @@ add_at_double(
   auto r3 = vals.unchecked<2>();
 
   if (r2.shape(0) != r3.shape(0))
-    throw std::runtime_error("Input shapes must match 1");
+    throw std::runtime_error("Input shapes must match");
 
   if (r1.shape(1) != r3.shape(1))
-    throw std::runtime_error("Input shapes must match 2");
+    throw std::runtime_error("Input shapes must match");
 
   for (ssize_t k=0; k < r2.shape(0); k++)
     for (ssize_t j=0; j < r1.shape(1); j++)
