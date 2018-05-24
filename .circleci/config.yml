@@ -7,8 +7,6 @@ jobs:
       - image: ubuntu:18.04
     steps:
       - run: apt-get update
-      # don't install sympy with apt: it pulls in texlive which takes forever
-      # to download and install
       - run: apt-get install -y git python3-pip
       - run: pip3 install -U pytest pytest-cov pylint
       - checkout
