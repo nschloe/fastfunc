@@ -8,6 +8,45 @@
 [![GitHub stars](https://img.shields.io/github/stars/nschloe/fastfunc.svg?logo=github&label=Stars)](https://github.com/nschloe/fastfunc)
 
 [NumPy's own ufunc
-operations](https://docs.scipy.org/doc/numpy-1.14.0/reference/ufuncs.html) are
-handy, but can be quite slow. This module offers drop-in replacements that are
-abound 40 times faster.
+operations](https://docs.scipy.org/doc/numpy/reference/generated/numpy.ufunc.at.html)
+are handy, but can be quite slow.  Use `fastfunc` as a drop-in replacement
+```python
+# import numpy
+# numpy.add.at(target, idx, vals)
+
+import fastfunc
+fastfunc.add.at(target, idx, vals)
+```
+to get a speed-up by a factor of 40.
+
+![](https://nschloe.github.io/fastfunc/add.png)
+
+### Installation
+
+fastfunc is [available from the Python Package
+Index](https://pypi.org/project/fastfunc/), so simply do
+```
+pip install -U fastfunc
+```
+to install or upgrade.
+
+### Testing
+
+To run the fastfunc unit tests, check out this repository and type
+```
+pytest
+```
+
+### Distribution
+To create a new release
+
+1. bump the `__version__` number,
+
+2. publish to PyPi and tag on GitHub:
+    ```
+    $ make publish
+    ```
+
+### License
+
+fastfunc is published under the [MIT license](https://en.wikipedia.org/wiki/MIT_License).
