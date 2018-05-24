@@ -12,7 +12,7 @@ from .__about__ import (
     __status__,
     )
 
-from . import add
+from . import add, subtract, multiply, divide
 
 # try:
 #     import pipdate
