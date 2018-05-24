@@ -91,4 +91,4 @@ def test_multi(numpy_fun, fastfunc_fun):
 
 
 if __name__ == '__main__':
-    test_rows()
+    test_rows(numpy.add.at, fastfunc.add.at)

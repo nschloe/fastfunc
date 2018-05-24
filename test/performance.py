@@ -1,8 +1,10 @@
 # -*- coding: utf-8 -*-
 #
-import fastfunc
 import numpy
+# pylint: disable=import-error
 import perfplot
+
+import fastfunc
 
 
 m = 100

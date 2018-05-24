@@ -3,4 +3,5 @@
 disable=
     invalid-name,
     missing-docstring,
+    no-member,
     no-name-in-module
