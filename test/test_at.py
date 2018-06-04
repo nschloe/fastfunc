@@ -6,12 +6,15 @@ import pytest
 import fastfunc
 
 
-@pytest.mark.parametrize('numpy_fun, fastfunc_fun', [
-    (numpy.add.at, fastfunc.add.at),
-    (numpy.subtract.at, fastfunc.subtract.at),
-    (numpy.multiply.at, fastfunc.multiply.at),
-    (numpy.divide.at, fastfunc.divide.at),
-])
+@pytest.mark.parametrize(
+    "numpy_fun, fastfunc_fun",
+    [
+        (numpy.add.at, fastfunc.add.at),
+        (numpy.subtract.at, fastfunc.subtract.at),
+        (numpy.multiply.at, fastfunc.multiply.at),
+        (numpy.divide.at, fastfunc.divide.at),
+    ],
+)
 def test_int(numpy_fun, fastfunc_fun):
     numpy.random.seed(123)
 
@@ -27,12 +30,15 @@ def test_int(numpy_fun, fastfunc_fun):
     return
 
 
-@pytest.mark.parametrize('numpy_fun, fastfunc_fun', [
-    (numpy.add.at, fastfunc.add.at),
-    (numpy.subtract.at, fastfunc.subtract.at),
-    (numpy.multiply.at, fastfunc.multiply.at),
-    (numpy.divide.at, fastfunc.divide.at),
-])
+@pytest.mark.parametrize(
+    "numpy_fun, fastfunc_fun",
+    [
+        (numpy.add.at, fastfunc.add.at),
+        (numpy.subtract.at, fastfunc.subtract.at),
+        (numpy.multiply.at, fastfunc.multiply.at),
+        (numpy.divide.at, fastfunc.divide.at),
+    ],
+)
 def test_float(numpy_fun, fastfunc_fun):
     numpy.random.seed(123)
 
@@ -48,12 +54,15 @@ def test_float(numpy_fun, fastfunc_fun):
     return
 
 
-@pytest.mark.parametrize('numpy_fun, fastfunc_fun', [
-    (numpy.add.at, fastfunc.add.at),
-    (numpy.subtract.at, fastfunc.subtract.at),
-    (numpy.multiply.at, fastfunc.multiply.at),
-    (numpy.divide.at, fastfunc.divide.at),
-])
+@pytest.mark.parametrize(
+    "numpy_fun, fastfunc_fun",
+    [
+        (numpy.add.at, fastfunc.add.at),
+        (numpy.subtract.at, fastfunc.subtract.at),
+        (numpy.multiply.at, fastfunc.multiply.at),
+        (numpy.divide.at, fastfunc.divide.at),
+    ],
+)
 def test_rows(numpy_fun, fastfunc_fun):
     numpy.random.seed(123)
 
@@ -69,12 +78,15 @@ def test_rows(numpy_fun, fastfunc_fun):
     return
 
 
-@pytest.mark.parametrize('numpy_fun, fastfunc_fun', [
-    (numpy.add.at, fastfunc.add.at),
-    (numpy.subtract.at, fastfunc.subtract.at),
-    (numpy.multiply.at, fastfunc.multiply.at),
-    (numpy.divide.at, fastfunc.divide.at),
-])
+@pytest.mark.parametrize(
+    "numpy_fun, fastfunc_fun",
+    [
+        (numpy.add.at, fastfunc.add.at),
+        (numpy.subtract.at, fastfunc.subtract.at),
+        (numpy.multiply.at, fastfunc.multiply.at),
+        (numpy.divide.at, fastfunc.divide.at),
+    ],
+)
 def test_multi(numpy_fun, fastfunc_fun):
     numpy.random.seed(123)
 
@@ -90,5 +102,5 @@ def test_multi(numpy_fun, fastfunc_fun):
     return
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     test_rows(numpy.add.at, fastfunc.add.at)
