@@ -8,10 +8,12 @@ jobs:
     steps:
       - run: apt-get update
       - run: apt-get install -y git python3-pip
-      - run: pip3 install -U pytest pytest-cov pylint
+      - run: pip3 install -U pytest pytest-cov black flake8
       - checkout
       - run: pip3 install .
-      - run: pylint setup.py fastfunc/ test/*.py
+      # format and lint
+      - run: LC_ALL=C.UTF-8 black --check setup.py fastfunc/ test/*.py
+      - run: flake8 setup.py fastfunc/ test/*.py
       # The tests
       - run: cd test/ && MPLBACKEND=Agg pytest --cov fastfunc
       # submit to codecov

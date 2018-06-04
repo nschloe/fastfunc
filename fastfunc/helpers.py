@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 #
 
+
 def _operator_at(operator, a, k, vals):
     a_shape = a.shape
 

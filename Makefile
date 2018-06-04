@@ -20,7 +20,6 @@ upload: setup.py
 	# python3 setup.py bdist_wheel --universal
 	# twine upload dist/*.whl
 
-
 publish: tag upload
 
 clean:
@@ -28,4 +27,5 @@ clean:
 	@rm -rf *.egg-info/ build/ dist/
 
 lint:
-	pylint setup.py fastfunc/ test/*.py
+	black --check setup.py fastfunc/ test/*.py
+	flake8 setup.py fastfunc/ test/*.py

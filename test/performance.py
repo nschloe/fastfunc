@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 #
 import numpy
+
 # pylint: disable=import-error
 import perfplot
 
@@ -27,9 +28,9 @@ def fastfunc_add_at(data):
 perfplot.show(
     setup=lambda n: (numpy.random.rand(n), numpy.random.randint(m, size=n)),
     kernels=[numpy_add_at, fastfunc_add_at],
-    labels=['numpy.add.at', 'fastfunc.add.at'],
-    n_range=[2**k for k in range(20)],
+    labels=["numpy.add.at", "fastfunc.add.at"],
+    n_range=[2 ** k for k in range(20)],
     logx=True,
     logy=True,
-    xlabel='num additions'
-    )
+    xlabel="num additions",
+)
