@@ -24,9 +24,20 @@ import fastfunc
         numpy.float64,
     ],
 )
-@pytest.mark.parametrize("dtype_idx", [
-    int, numpy.int8,
-    ])
+@pytest.mark.parametrize(
+    "dtype_idx",
+    [
+        int,
+        numpy.int8,
+        numpy.int16,
+        numpy.int32,
+        numpy.int64,
+        numpy.uint8,
+        numpy.uint16,
+        numpy.uint32,
+        numpy.uint64,
+    ],
+)
 @pytest.mark.parametrize(
     "numpy_fun, fastfunc_fun",
     [

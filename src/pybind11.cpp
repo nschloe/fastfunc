@@ -32,6 +32,145 @@ at(
 };
 
 PYBIND11_MODULE(_fastfunc, m) {
+  // Check https://stackoverflow.com/questions/51115973/loop-over-template-types for
+  // shorter code
+
+  // int8 idx type
+  m.def("_add_at", &at<int8_t, int8_t, std::plus<int8_t>>);
+  m.def("_add_at", &at<int8_t, int16_t, std::plus<int16_t>>);
+  m.def("_add_at", &at<int8_t, int32_t, std::plus<int32_t>>);
+  m.def("_add_at", &at<int8_t, int64_t, std::plus<int64_t>>);
+  m.def("_add_at", &at<int8_t, uint8_t, std::plus<uint8_t>>);
+  m.def("_add_at", &at<int8_t, uint16_t, std::plus<uint16_t>>);
+  m.def("_add_at", &at<int8_t, uint32_t, std::plus<uint32_t>>);
+  m.def("_add_at", &at<int8_t, uint64_t, std::plus<uint64_t>>);
+  m.def("_add_at", &at<int8_t, float, std::plus<float>>);
+  m.def("_add_at", &at<int8_t, double, std::plus<double>>);
+  //
+  m.def("_subtract_at", &at<int8_t, int8_t, std::minus<int8_t>>);
+  m.def("_subtract_at", &at<int8_t, int16_t, std::minus<int16_t>>);
+  m.def("_subtract_at", &at<int8_t, int32_t, std::minus<int32_t>>);
+  m.def("_subtract_at", &at<int8_t, int64_t, std::minus<int64_t>>);
+  m.def("_subtract_at", &at<int8_t, uint8_t, std::minus<uint8_t>>);
+  m.def("_subtract_at", &at<int8_t, uint16_t, std::minus<uint16_t>>);
+  m.def("_subtract_at", &at<int8_t, uint32_t, std::minus<uint32_t>>);
+  m.def("_subtract_at", &at<int8_t, uint64_t, std::minus<uint64_t>>);
+  m.def("_subtract_at", &at<int8_t, float, std::minus<float>>);
+  m.def("_subtract_at", &at<int8_t, double, std::minus<double>>);
+  //
+  m.def("_multiply_at", &at<int8_t, int8_t, std::multiplies<int8_t>>);
+  m.def("_multiply_at", &at<int8_t, int16_t, std::multiplies<int16_t>>);
+  m.def("_multiply_at", &at<int8_t, int32_t, std::multiplies<int32_t>>);
+  m.def("_multiply_at", &at<int8_t, int64_t, std::multiplies<int64_t>>);
+  m.def("_multiply_at", &at<int8_t, uint8_t, std::multiplies<uint8_t>>);
+  m.def("_multiply_at", &at<int8_t, uint16_t, std::multiplies<uint16_t>>);
+  m.def("_multiply_at", &at<int8_t, uint32_t, std::multiplies<uint32_t>>);
+  m.def("_multiply_at", &at<int8_t, uint64_t, std::multiplies<uint64_t>>);
+  m.def("_multiply_at", &at<int8_t, float, std::multiplies<float>>);
+  m.def("_multiply_at", &at<int8_t, double, std::multiplies<double>>);
+  //
+  m.def("_divide_at", &at<int8_t, int8_t, std::divides<int8_t>>);
+  m.def("_divide_at", &at<int8_t, int16_t, std::divides<int16_t>>);
+  m.def("_divide_at", &at<int8_t, int32_t, std::divides<int32_t>>);
+  m.def("_divide_at", &at<int8_t, int64_t, std::divides<int64_t>>);
+  m.def("_divide_at", &at<int8_t, uint8_t, std::divides<uint8_t>>);
+  m.def("_divide_at", &at<int8_t, uint16_t, std::divides<uint16_t>>);
+  m.def("_divide_at", &at<int8_t, uint32_t, std::divides<uint32_t>>);
+  m.def("_divide_at", &at<int8_t, uint64_t, std::divides<uint64_t>>);
+  m.def("_divide_at", &at<int8_t, float, std::divides<float>>);
+  m.def("_divide_at", &at<int8_t, double, std::divides<double>>);
+
+  // int16 idx type
+  m.def("_add_at", &at<int16_t, int8_t, std::plus<int8_t>>);
+  m.def("_add_at", &at<int16_t, int16_t, std::plus<int16_t>>);
+  m.def("_add_at", &at<int16_t, int32_t, std::plus<int32_t>>);
+  m.def("_add_at", &at<int16_t, int64_t, std::plus<int64_t>>);
+  m.def("_add_at", &at<int16_t, uint8_t, std::plus<uint8_t>>);
+  m.def("_add_at", &at<int16_t, uint16_t, std::plus<uint16_t>>);
+  m.def("_add_at", &at<int16_t, uint32_t, std::plus<uint32_t>>);
+  m.def("_add_at", &at<int16_t, uint64_t, std::plus<uint64_t>>);
+  m.def("_add_at", &at<int16_t, float, std::plus<float>>);
+  m.def("_add_at", &at<int16_t, double, std::plus<double>>);
+  //
+  m.def("_subtract_at", &at<int16_t, int8_t, std::minus<int8_t>>);
+  m.def("_subtract_at", &at<int16_t, int16_t, std::minus<int16_t>>);
+  m.def("_subtract_at", &at<int16_t, int32_t, std::minus<int32_t>>);
+  m.def("_subtract_at", &at<int16_t, int64_t, std::minus<int64_t>>);
+  m.def("_subtract_at", &at<int16_t, uint8_t, std::minus<uint8_t>>);
+  m.def("_subtract_at", &at<int16_t, uint16_t, std::minus<uint16_t>>);
+  m.def("_subtract_at", &at<int16_t, uint32_t, std::minus<uint32_t>>);
+  m.def("_subtract_at", &at<int16_t, uint64_t, std::minus<uint64_t>>);
+  m.def("_subtract_at", &at<int16_t, float, std::minus<float>>);
+  m.def("_subtract_at", &at<int16_t, double, std::minus<double>>);
+  //
+  m.def("_multiply_at", &at<int16_t, int8_t, std::multiplies<int8_t>>);
+  m.def("_multiply_at", &at<int16_t, int16_t, std::multiplies<int16_t>>);
+  m.def("_multiply_at", &at<int16_t, int32_t, std::multiplies<int32_t>>);
+  m.def("_multiply_at", &at<int16_t, int64_t, std::multiplies<int64_t>>);
+  m.def("_multiply_at", &at<int16_t, uint8_t, std::multiplies<uint8_t>>);
+  m.def("_multiply_at", &at<int16_t, uint16_t, std::multiplies<uint16_t>>);
+  m.def("_multiply_at", &at<int16_t, uint32_t, std::multiplies<uint32_t>>);
+  m.def("_multiply_at", &at<int16_t, uint64_t, std::multiplies<uint64_t>>);
+  m.def("_multiply_at", &at<int16_t, float, std::multiplies<float>>);
+  m.def("_multiply_at", &at<int16_t, double, std::multiplies<double>>);
+  //
+  m.def("_divide_at", &at<int16_t, int8_t, std::divides<int8_t>>);
+  m.def("_divide_at", &at<int16_t, int16_t, std::divides<int16_t>>);
+  m.def("_divide_at", &at<int16_t, int32_t, std::divides<int32_t>>);
+  m.def("_divide_at", &at<int16_t, int64_t, std::divides<int64_t>>);
+  m.def("_divide_at", &at<int16_t, uint8_t, std::divides<uint8_t>>);
+  m.def("_divide_at", &at<int16_t, uint16_t, std::divides<uint16_t>>);
+  m.def("_divide_at", &at<int16_t, uint32_t, std::divides<uint32_t>>);
+  m.def("_divide_at", &at<int16_t, uint64_t, std::divides<uint64_t>>);
+  m.def("_divide_at", &at<int16_t, float, std::divides<float>>);
+  m.def("_divide_at", &at<int16_t, double, std::divides<double>>);
+
+  // int32 idx type
+  m.def("_add_at", &at<int32_t, int8_t, std::plus<int8_t>>);
+  m.def("_add_at", &at<int32_t, int16_t, std::plus<int16_t>>);
+  m.def("_add_at", &at<int32_t, int32_t, std::plus<int32_t>>);
+  m.def("_add_at", &at<int32_t, int64_t, std::plus<int64_t>>);
+  m.def("_add_at", &at<int32_t, uint8_t, std::plus<uint8_t>>);
+  m.def("_add_at", &at<int32_t, uint16_t, std::plus<uint16_t>>);
+  m.def("_add_at", &at<int32_t, uint32_t, std::plus<uint32_t>>);
+  m.def("_add_at", &at<int32_t, uint64_t, std::plus<uint64_t>>);
+  m.def("_add_at", &at<int32_t, float, std::plus<float>>);
+  m.def("_add_at", &at<int32_t, double, std::plus<double>>);
+  //
+  m.def("_subtract_at", &at<int32_t, int8_t, std::minus<int8_t>>);
+  m.def("_subtract_at", &at<int32_t, int16_t, std::minus<int16_t>>);
+  m.def("_subtract_at", &at<int32_t, int32_t, std::minus<int32_t>>);
+  m.def("_subtract_at", &at<int32_t, int64_t, std::minus<int64_t>>);
+  m.def("_subtract_at", &at<int32_t, uint8_t, std::minus<uint8_t>>);
+  m.def("_subtract_at", &at<int32_t, uint16_t, std::minus<uint16_t>>);
+  m.def("_subtract_at", &at<int32_t, uint32_t, std::minus<uint32_t>>);
+  m.def("_subtract_at", &at<int32_t, uint64_t, std::minus<uint64_t>>);
+  m.def("_subtract_at", &at<int32_t, float, std::minus<float>>);
+  m.def("_subtract_at", &at<int32_t, double, std::minus<double>>);
+  //
+  m.def("_multiply_at", &at<int32_t, int8_t, std::multiplies<int8_t>>);
+  m.def("_multiply_at", &at<int32_t, int16_t, std::multiplies<int16_t>>);
+  m.def("_multiply_at", &at<int32_t, int32_t, std::multiplies<int32_t>>);
+  m.def("_multiply_at", &at<int32_t, int64_t, std::multiplies<int64_t>>);
+  m.def("_multiply_at", &at<int32_t, uint8_t, std::multiplies<uint8_t>>);
+  m.def("_multiply_at", &at<int32_t, uint16_t, std::multiplies<uint16_t>>);
+  m.def("_multiply_at", &at<int32_t, uint32_t, std::multiplies<uint32_t>>);
+  m.def("_multiply_at", &at<int32_t, uint64_t, std::multiplies<uint64_t>>);
+  m.def("_multiply_at", &at<int32_t, float, std::multiplies<float>>);
+  m.def("_multiply_at", &at<int32_t, double, std::multiplies<double>>);
+  //
+  m.def("_divide_at", &at<int32_t, int8_t, std::divides<int8_t>>);
+  m.def("_divide_at", &at<int32_t, int16_t, std::divides<int16_t>>);
+  m.def("_divide_at", &at<int32_t, int32_t, std::divides<int32_t>>);
+  m.def("_divide_at", &at<int32_t, int64_t, std::divides<int64_t>>);
+  m.def("_divide_at", &at<int32_t, uint8_t, std::divides<uint8_t>>);
+  m.def("_divide_at", &at<int32_t, uint16_t, std::divides<uint16_t>>);
+  m.def("_divide_at", &at<int32_t, uint32_t, std::divides<uint32_t>>);
+  m.def("_divide_at", &at<int32_t, uint64_t, std::divides<uint64_t>>);
+  m.def("_divide_at", &at<int32_t, float, std::divides<float>>);
+  m.def("_divide_at", &at<int32_t, double, std::divides<double>>);
+
+  // int64 idx type
   m.def("_add_at", &at<int64_t, int8_t, std::plus<int8_t>>);
   m.def("_add_at", &at<int64_t, int16_t, std::plus<int16_t>>);
   m.def("_add_at", &at<int64_t, int32_t, std::plus<int32_t>>);
@@ -42,7 +181,7 @@ PYBIND11_MODULE(_fastfunc, m) {
   m.def("_add_at", &at<int64_t, uint64_t, std::plus<uint64_t>>);
   m.def("_add_at", &at<int64_t, float, std::plus<float>>);
   m.def("_add_at", &at<int64_t, double, std::plus<double>>);
-
+  //
   m.def("_subtract_at", &at<int64_t, int8_t, std::minus<int8_t>>);
   m.def("_subtract_at", &at<int64_t, int16_t, std::minus<int16_t>>);
   m.def("_subtract_at", &at<int64_t, int32_t, std::minus<int32_t>>);
@@ -53,7 +192,7 @@ PYBIND11_MODULE(_fastfunc, m) {
   m.def("_subtract_at", &at<int64_t, uint64_t, std::minus<uint64_t>>);
   m.def("_subtract_at", &at<int64_t, float, std::minus<float>>);
   m.def("_subtract_at", &at<int64_t, double, std::minus<double>>);
-
+  //
   m.def("_multiply_at", &at<int64_t, int8_t, std::multiplies<int8_t>>);
   m.def("_multiply_at", &at<int64_t, int16_t, std::multiplies<int16_t>>);
   m.def("_multiply_at", &at<int64_t, int32_t, std::multiplies<int32_t>>);
@@ -64,7 +203,7 @@ PYBIND11_MODULE(_fastfunc, m) {
   m.def("_multiply_at", &at<int64_t, uint64_t, std::multiplies<uint64_t>>);
   m.def("_multiply_at", &at<int64_t, float, std::multiplies<float>>);
   m.def("_multiply_at", &at<int64_t, double, std::multiplies<double>>);
-
+  //
   m.def("_divide_at", &at<int64_t, int8_t, std::divides<int8_t>>);
   m.def("_divide_at", &at<int64_t, int16_t, std::divides<int16_t>>);
   m.def("_divide_at", &at<int64_t, int32_t, std::divides<int32_t>>);
@@ -75,4 +214,184 @@ PYBIND11_MODULE(_fastfunc, m) {
   m.def("_divide_at", &at<int64_t, uint64_t, std::divides<uint64_t>>);
   m.def("_divide_at", &at<int64_t, float, std::divides<float>>);
   m.def("_divide_at", &at<int64_t, double, std::divides<double>>);
+
+  // uint8 idx type
+  m.def("_add_at", &at<uint8_t, int8_t, std::plus<int8_t>>);
+  m.def("_add_at", &at<uint8_t, int16_t, std::plus<int16_t>>);
+  m.def("_add_at", &at<uint8_t, int32_t, std::plus<int32_t>>);
+  m.def("_add_at", &at<uint8_t, int64_t, std::plus<int64_t>>);
+  m.def("_add_at", &at<uint8_t, uint8_t, std::plus<uint8_t>>);
+  m.def("_add_at", &at<uint8_t, uint16_t, std::plus<uint16_t>>);
+  m.def("_add_at", &at<uint8_t, uint32_t, std::plus<uint32_t>>);
+  m.def("_add_at", &at<uint8_t, uint64_t, std::plus<uint64_t>>);
+  m.def("_add_at", &at<uint8_t, float, std::plus<float>>);
+  m.def("_add_at", &at<uint8_t, double, std::plus<double>>);
+  //
+  m.def("_subtract_at", &at<uint8_t, int8_t, std::minus<int8_t>>);
+  m.def("_subtract_at", &at<uint8_t, int16_t, std::minus<int16_t>>);
+  m.def("_subtract_at", &at<uint8_t, int32_t, std::minus<int32_t>>);
+  m.def("_subtract_at", &at<uint8_t, int64_t, std::minus<int64_t>>);
+  m.def("_subtract_at", &at<uint8_t, uint8_t, std::minus<uint8_t>>);
+  m.def("_subtract_at", &at<uint8_t, uint16_t, std::minus<uint16_t>>);
+  m.def("_subtract_at", &at<uint8_t, uint32_t, std::minus<uint32_t>>);
+  m.def("_subtract_at", &at<uint8_t, uint64_t, std::minus<uint64_t>>);
+  m.def("_subtract_at", &at<uint8_t, float, std::minus<float>>);
+  m.def("_subtract_at", &at<uint8_t, double, std::minus<double>>);
+  //
+  m.def("_multiply_at", &at<uint8_t, int8_t, std::multiplies<int8_t>>);
+  m.def("_multiply_at", &at<uint8_t, int16_t, std::multiplies<int16_t>>);
+  m.def("_multiply_at", &at<uint8_t, int32_t, std::multiplies<int32_t>>);
+  m.def("_multiply_at", &at<uint8_t, int64_t, std::multiplies<int64_t>>);
+  m.def("_multiply_at", &at<uint8_t, uint8_t, std::multiplies<uint8_t>>);
+  m.def("_multiply_at", &at<uint8_t, uint16_t, std::multiplies<uint16_t>>);
+  m.def("_multiply_at", &at<uint8_t, uint32_t, std::multiplies<uint32_t>>);
+  m.def("_multiply_at", &at<uint8_t, uint64_t, std::multiplies<uint64_t>>);
+  m.def("_multiply_at", &at<uint8_t, float, std::multiplies<float>>);
+  m.def("_multiply_at", &at<uint8_t, double, std::multiplies<double>>);
+  //
+  m.def("_divide_at", &at<uint8_t, int8_t, std::divides<int8_t>>);
+  m.def("_divide_at", &at<uint8_t, int16_t, std::divides<int16_t>>);
+  m.def("_divide_at", &at<uint8_t, int32_t, std::divides<int32_t>>);
+  m.def("_divide_at", &at<uint8_t, int64_t, std::divides<int64_t>>);
+  m.def("_divide_at", &at<uint8_t, uint8_t, std::divides<uint8_t>>);
+  m.def("_divide_at", &at<uint8_t, uint16_t, std::divides<uint16_t>>);
+  m.def("_divide_at", &at<uint8_t, uint32_t, std::divides<uint32_t>>);
+  m.def("_divide_at", &at<uint8_t, uint64_t, std::divides<uint64_t>>);
+  m.def("_divide_at", &at<uint8_t, float, std::divides<float>>);
+  m.def("_divide_at", &at<uint8_t, double, std::divides<double>>);
+
+  // uint16 idx type
+  m.def("_add_at", &at<uint16_t, int8_t, std::plus<int8_t>>);
+  m.def("_add_at", &at<uint16_t, int16_t, std::plus<int16_t>>);
+  m.def("_add_at", &at<uint16_t, int32_t, std::plus<int32_t>>);
+  m.def("_add_at", &at<uint16_t, int64_t, std::plus<int64_t>>);
+  m.def("_add_at", &at<uint16_t, uint8_t, std::plus<uint8_t>>);
+  m.def("_add_at", &at<uint16_t, uint16_t, std::plus<uint16_t>>);
+  m.def("_add_at", &at<uint16_t, uint32_t, std::plus<uint32_t>>);
+  m.def("_add_at", &at<uint16_t, uint64_t, std::plus<uint64_t>>);
+  m.def("_add_at", &at<uint16_t, float, std::plus<float>>);
+  m.def("_add_at", &at<uint16_t, double, std::plus<double>>);
+  //
+  m.def("_subtract_at", &at<uint16_t, int8_t, std::minus<int8_t>>);
+  m.def("_subtract_at", &at<uint16_t, int16_t, std::minus<int16_t>>);
+  m.def("_subtract_at", &at<uint16_t, int32_t, std::minus<int32_t>>);
+  m.def("_subtract_at", &at<uint16_t, int64_t, std::minus<int64_t>>);
+  m.def("_subtract_at", &at<uint16_t, uint8_t, std::minus<uint8_t>>);
+  m.def("_subtract_at", &at<uint16_t, uint16_t, std::minus<uint16_t>>);
+  m.def("_subtract_at", &at<uint16_t, uint32_t, std::minus<uint32_t>>);
+  m.def("_subtract_at", &at<uint16_t, uint64_t, std::minus<uint64_t>>);
+  m.def("_subtract_at", &at<uint16_t, float, std::minus<float>>);
+  m.def("_subtract_at", &at<uint16_t, double, std::minus<double>>);
+  //
+  m.def("_multiply_at", &at<uint16_t, int8_t, std::multiplies<int8_t>>);
+  m.def("_multiply_at", &at<uint16_t, int16_t, std::multiplies<int16_t>>);
+  m.def("_multiply_at", &at<uint16_t, int32_t, std::multiplies<int32_t>>);
+  m.def("_multiply_at", &at<uint16_t, int64_t, std::multiplies<int64_t>>);
+  m.def("_multiply_at", &at<uint16_t, uint8_t, std::multiplies<uint8_t>>);
+  m.def("_multiply_at", &at<uint16_t, uint16_t, std::multiplies<uint16_t>>);
+  m.def("_multiply_at", &at<uint16_t, uint32_t, std::multiplies<uint32_t>>);
+  m.def("_multiply_at", &at<uint16_t, uint64_t, std::multiplies<uint64_t>>);
+  m.def("_multiply_at", &at<uint16_t, float, std::multiplies<float>>);
+  m.def("_multiply_at", &at<uint16_t, double, std::multiplies<double>>);
+  //
+  m.def("_divide_at", &at<uint16_t, int8_t, std::divides<int8_t>>);
+  m.def("_divide_at", &at<uint16_t, int16_t, std::divides<int16_t>>);
+  m.def("_divide_at", &at<uint16_t, int32_t, std::divides<int32_t>>);
+  m.def("_divide_at", &at<uint16_t, int64_t, std::divides<int64_t>>);
+  m.def("_divide_at", &at<uint16_t, uint8_t, std::divides<uint8_t>>);
+  m.def("_divide_at", &at<uint16_t, uint16_t, std::divides<uint16_t>>);
+  m.def("_divide_at", &at<uint16_t, uint32_t, std::divides<uint32_t>>);
+  m.def("_divide_at", &at<uint16_t, uint64_t, std::divides<uint64_t>>);
+  m.def("_divide_at", &at<uint16_t, float, std::divides<float>>);
+  m.def("_divide_at", &at<uint16_t, double, std::divides<double>>);
+
+  // uint32 idx type
+  m.def("_add_at", &at<uint32_t, int8_t, std::plus<int8_t>>);
+  m.def("_add_at", &at<uint32_t, int16_t, std::plus<int16_t>>);
+  m.def("_add_at", &at<uint32_t, int32_t, std::plus<int32_t>>);
+  m.def("_add_at", &at<uint32_t, int64_t, std::plus<int64_t>>);
+  m.def("_add_at", &at<uint32_t, uint8_t, std::plus<uint8_t>>);
+  m.def("_add_at", &at<uint32_t, uint16_t, std::plus<uint16_t>>);
+  m.def("_add_at", &at<uint32_t, uint32_t, std::plus<uint32_t>>);
+  m.def("_add_at", &at<uint32_t, uint64_t, std::plus<uint64_t>>);
+  m.def("_add_at", &at<uint32_t, float, std::plus<float>>);
+  m.def("_add_at", &at<uint32_t, double, std::plus<double>>);
+  //
+  m.def("_subtract_at", &at<uint32_t, int8_t, std::minus<int8_t>>);
+  m.def("_subtract_at", &at<uint32_t, int16_t, std::minus<int16_t>>);
+  m.def("_subtract_at", &at<uint32_t, int32_t, std::minus<int32_t>>);
+  m.def("_subtract_at", &at<uint32_t, int64_t, std::minus<int64_t>>);
+  m.def("_subtract_at", &at<uint32_t, uint8_t, std::minus<uint8_t>>);
+  m.def("_subtract_at", &at<uint32_t, uint16_t, std::minus<uint16_t>>);
+  m.def("_subtract_at", &at<uint32_t, uint32_t, std::minus<uint32_t>>);
+  m.def("_subtract_at", &at<uint32_t, uint64_t, std::minus<uint64_t>>);
+  m.def("_subtract_at", &at<uint32_t, float, std::minus<float>>);
+  m.def("_subtract_at", &at<uint32_t, double, std::minus<double>>);
+  //
+  m.def("_multiply_at", &at<uint32_t, int8_t, std::multiplies<int8_t>>);
+  m.def("_multiply_at", &at<uint32_t, int16_t, std::multiplies<int16_t>>);
+  m.def("_multiply_at", &at<uint32_t, int32_t, std::multiplies<int32_t>>);
+  m.def("_multiply_at", &at<uint32_t, int64_t, std::multiplies<int64_t>>);
+  m.def("_multiply_at", &at<uint32_t, uint8_t, std::multiplies<uint8_t>>);
+  m.def("_multiply_at", &at<uint32_t, uint16_t, std::multiplies<uint16_t>>);
+  m.def("_multiply_at", &at<uint32_t, uint32_t, std::multiplies<uint32_t>>);
+  m.def("_multiply_at", &at<uint32_t, uint64_t, std::multiplies<uint64_t>>);
+  m.def("_multiply_at", &at<uint32_t, float, std::multiplies<float>>);
+  m.def("_multiply_at", &at<uint32_t, double, std::multiplies<double>>);
+  //
+  m.def("_divide_at", &at<uint32_t, int8_t, std::divides<int8_t>>);
+  m.def("_divide_at", &at<uint32_t, int16_t, std::divides<int16_t>>);
+  m.def("_divide_at", &at<uint32_t, int32_t, std::divides<int32_t>>);
+  m.def("_divide_at", &at<uint32_t, int64_t, std::divides<int64_t>>);
+  m.def("_divide_at", &at<uint32_t, uint8_t, std::divides<uint8_t>>);
+  m.def("_divide_at", &at<uint32_t, uint16_t, std::divides<uint16_t>>);
+  m.def("_divide_at", &at<uint32_t, uint32_t, std::divides<uint32_t>>);
+  m.def("_divide_at", &at<uint32_t, uint64_t, std::divides<uint64_t>>);
+  m.def("_divide_at", &at<uint32_t, float, std::divides<float>>);
+  m.def("_divide_at", &at<uint32_t, double, std::divides<double>>);
+
+  // uint64 idx type
+  m.def("_add_at", &at<uint64_t, int8_t, std::plus<int8_t>>);
+  m.def("_add_at", &at<uint64_t, int16_t, std::plus<int16_t>>);
+  m.def("_add_at", &at<uint64_t, int32_t, std::plus<int32_t>>);
+  m.def("_add_at", &at<uint64_t, int64_t, std::plus<int64_t>>);
+  m.def("_add_at", &at<uint64_t, uint8_t, std::plus<uint8_t>>);
+  m.def("_add_at", &at<uint64_t, uint16_t, std::plus<uint16_t>>);
+  m.def("_add_at", &at<uint64_t, uint32_t, std::plus<uint32_t>>);
+  m.def("_add_at", &at<uint64_t, uint64_t, std::plus<uint64_t>>);
+  m.def("_add_at", &at<uint64_t, float, std::plus<float>>);
+  m.def("_add_at", &at<uint64_t, double, std::plus<double>>);
+  //
+  m.def("_subtract_at", &at<uint64_t, int8_t, std::minus<int8_t>>);
+  m.def("_subtract_at", &at<uint64_t, int16_t, std::minus<int16_t>>);
+  m.def("_subtract_at", &at<uint64_t, int32_t, std::minus<int32_t>>);
+  m.def("_subtract_at", &at<uint64_t, int64_t, std::minus<int64_t>>);
+  m.def("_subtract_at", &at<uint64_t, uint8_t, std::minus<uint8_t>>);
+  m.def("_subtract_at", &at<uint64_t, uint16_t, std::minus<uint16_t>>);
+  m.def("_subtract_at", &at<uint64_t, uint32_t, std::minus<uint32_t>>);
+  m.def("_subtract_at", &at<uint64_t, uint64_t, std::minus<uint64_t>>);
+  m.def("_subtract_at", &at<uint64_t, float, std::minus<float>>);
+  m.def("_subtract_at", &at<uint64_t, double, std::minus<double>>);
+  //
+  m.def("_multiply_at", &at<uint64_t, int8_t, std::multiplies<int8_t>>);
+  m.def("_multiply_at", &at<uint64_t, int16_t, std::multiplies<int16_t>>);
+  m.def("_multiply_at", &at<uint64_t, int32_t, std::multiplies<int32_t>>);
+  m.def("_multiply_at", &at<uint64_t, int64_t, std::multiplies<int64_t>>);
+  m.def("_multiply_at", &at<uint64_t, uint8_t, std::multiplies<uint8_t>>);
+  m.def("_multiply_at", &at<uint64_t, uint16_t, std::multiplies<uint16_t>>);
+  m.def("_multiply_at", &at<uint64_t, uint32_t, std::multiplies<uint32_t>>);
+  m.def("_multiply_at", &at<uint64_t, uint64_t, std::multiplies<uint64_t>>);
+  m.def("_multiply_at", &at<uint64_t, float, std::multiplies<float>>);
+  m.def("_multiply_at", &at<uint64_t, double, std::multiplies<double>>);
+  //
+  m.def("_divide_at", &at<uint64_t, int8_t, std::divides<int8_t>>);
+  m.def("_divide_at", &at<uint64_t, int16_t, std::divides<int16_t>>);
+  m.def("_divide_at", &at<uint64_t, int32_t, std::divides<int32_t>>);
+  m.def("_divide_at", &at<uint64_t, int64_t, std::divides<int64_t>>);
+  m.def("_divide_at", &at<uint64_t, uint8_t, std::divides<uint8_t>>);
+  m.def("_divide_at", &at<uint64_t, uint16_t, std::divides<uint16_t>>);
+  m.def("_divide_at", &at<uint64_t, uint32_t, std::divides<uint32_t>>);
+  m.def("_divide_at", &at<uint64_t, uint64_t, std::divides<uint64_t>>);
+  m.def("_divide_at", &at<uint64_t, float, std::divides<float>>);
+  m.def("_divide_at", &at<uint64_t, double, std::divides<double>>);
 }
