@@ -19,9 +19,11 @@ import fastfunc
         numpy.uint16,
         numpy.uint32,
         numpy.uint64,
-        # numpy.float16,  # not working
+        # numpy.float16: not workingm has no C++ equivalent
         numpy.float32,
         numpy.float64,
+        # numpy.dtype(">i4"): not working, byte order in target must be native
+        numpy.dtype("<i4"),
     ],
 )
 @pytest.mark.parametrize(
