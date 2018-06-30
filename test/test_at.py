@@ -36,6 +36,8 @@ import fastfunc
         numpy.uint16,
         numpy.uint32,
         numpy.uint64,
+        numpy.dtype(">i4"),
+        numpy.dtype("<i4"),
     ],
 )
 @pytest.mark.parametrize(
@@ -51,7 +53,7 @@ def test_dtypes(dtype_data, dtype_idx, numpy_fun, fastfunc_fun):
     numpy.random.seed(123)
 
     a0 = numpy.zeros(10, dtype=dtype_data)
-    k = numpy.random.randint(10, size=5, dtype=dtype_idx)
+    k = numpy.random.randint(10, size=5).astype(dtype_idx)
     v = (17 * numpy.random.rand(5)).astype(dtype_data)
     numpy_fun(a0, k, v)
 
