@@ -32,15 +32,47 @@ at(
 };
 
 PYBIND11_MODULE(_fastfunc, m) {
+  m.def("_add_at", &at<int8_t, std::plus<int8_t>>);
+  m.def("_add_at", &at<int16_t, std::plus<int16_t>>);
+  m.def("_add_at", &at<int32_t, std::plus<int32_t>>);
   m.def("_add_at", &at<int64_t, std::plus<int64_t>>);
+  m.def("_add_at", &at<uint8_t, std::plus<uint8_t>>);
+  m.def("_add_at", &at<uint16_t, std::plus<uint16_t>>);
+  m.def("_add_at", &at<uint32_t, std::plus<uint32_t>>);
+  m.def("_add_at", &at<uint64_t, std::plus<uint64_t>>);
+  m.def("_add_at", &at<float, std::plus<float>>);
   m.def("_add_at", &at<double, std::plus<double>>);
 
+  m.def("_subtract_at", &at<int8_t, std::minus<int8_t>>);
+  m.def("_subtract_at", &at<int16_t, std::minus<int16_t>>);
+  m.def("_subtract_at", &at<int32_t, std::minus<int32_t>>);
   m.def("_subtract_at", &at<int64_t, std::minus<int64_t>>);
+  m.def("_subtract_at", &at<uint8_t, std::minus<uint8_t>>);
+  m.def("_subtract_at", &at<uint16_t, std::minus<uint16_t>>);
+  m.def("_subtract_at", &at<uint32_t, std::minus<uint32_t>>);
+  m.def("_subtract_at", &at<uint64_t, std::minus<uint64_t>>);
+  m.def("_subtract_at", &at<float, std::minus<float>>);
   m.def("_subtract_at", &at<double, std::minus<double>>);
 
+  m.def("_multiply_at", &at<int8_t, std::multiplies<int8_t>>);
+  m.def("_multiply_at", &at<int16_t, std::multiplies<int16_t>>);
+  m.def("_multiply_at", &at<int32_t, std::multiplies<int32_t>>);
   m.def("_multiply_at", &at<int64_t, std::multiplies<int64_t>>);
+  m.def("_multiply_at", &at<uint8_t, std::multiplies<uint8_t>>);
+  m.def("_multiply_at", &at<uint16_t, std::multiplies<uint16_t>>);
+  m.def("_multiply_at", &at<uint32_t, std::multiplies<uint32_t>>);
+  m.def("_multiply_at", &at<uint64_t, std::multiplies<uint64_t>>);
+  m.def("_multiply_at", &at<float, std::multiplies<float>>);
   m.def("_multiply_at", &at<double, std::multiplies<double>>);
 
+  m.def("_divide_at", &at<int8_t, std::divides<int8_t>>);
+  m.def("_divide_at", &at<int16_t, std::divides<int16_t>>);
+  m.def("_divide_at", &at<int32_t, std::divides<int32_t>>);
   m.def("_divide_at", &at<int64_t, std::divides<int64_t>>);
+  m.def("_divide_at", &at<uint8_t, std::divides<uint8_t>>);
+  m.def("_divide_at", &at<uint16_t, std::divides<uint16_t>>);
+  m.def("_divide_at", &at<uint32_t, std::divides<uint32_t>>);
+  m.def("_divide_at", &at<uint64_t, std::divides<uint64_t>>);
+  m.def("_divide_at", &at<float, std::divides<float>>);
   m.def("_divide_at", &at<double, std::divides<double>>);
 }

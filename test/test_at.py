@@ -7,12 +7,24 @@ import fastfunc
 
 
 @pytest.mark.parametrize(
-    "dtype_data, dtype_idx",
+    "dtype_data",
     [
-        (int, int),
-        (float, int),
-    ]
+        int,
+        float,
+        numpy.int8,
+        numpy.int16,
+        numpy.int32,
+        numpy.int64,
+        numpy.uint8,
+        numpy.uint16,
+        numpy.uint32,
+        numpy.uint64,
+        # numpy.float16,  # not working
+        numpy.float32,
+        numpy.float64,
+    ],
 )
+@pytest.mark.parametrize("dtype_idx", [int])
 @pytest.mark.parametrize(
     "numpy_fun, fastfunc_fun",
     [
@@ -33,6 +45,8 @@ def test_dtypes(dtype_data, dtype_idx, numpy_fun, fastfunc_fun):
     a1 = numpy.zeros(10, dtype=dtype_data)
     fastfunc_fun(a1, k, v)
 
+    print(a0)
+    print(a1)
     assert numpy.all(a0 == a1)
     return
 
