@@ -7,29 +7,37 @@ import fastfunc
 
 
 @pytest.mark.parametrize(
-    "numpy_fun, fastfunc_fun",
+    "dtype_data",
     [
-        (numpy.add.at, fastfunc.add.at),
-        (numpy.subtract.at, fastfunc.subtract.at),
-        (numpy.multiply.at, fastfunc.multiply.at),
-        (numpy.divide.at, fastfunc.divide.at),
+        int,
+        float,
+        numpy.int8,
+        numpy.int16,
+        numpy.int32,
+        numpy.int64,
+        numpy.uint8,
+        numpy.uint16,
+        numpy.uint32,
+        numpy.uint64,
+        # numpy.float16,  # not working
+        numpy.float32,
+        numpy.float64,
     ],
 )
-def test_int(numpy_fun, fastfunc_fun):
-    numpy.random.seed(123)
-
-    a0 = numpy.zeros(10, dtype=int)
-    k = numpy.random.randint(10, size=5)
-    v = numpy.random.randint(7, size=5)
-    numpy_fun(a0, k, v)
-
-    a1 = numpy.zeros(10, dtype=int)
-    fastfunc_fun(a1, k, v)
-
-    assert numpy.all(a0 == a1)
-    return
-
-
+@pytest.mark.parametrize(
+    "dtype_idx",
+    [
+        int,
+        numpy.int8,
+        numpy.int16,
+        numpy.int32,
+        numpy.int64,
+        numpy.uint8,
+        numpy.uint16,
+        numpy.uint32,
+        numpy.uint64,
+    ],
+)
 @pytest.mark.parametrize(
     "numpy_fun, fastfunc_fun",
     [
@@ -39,17 +47,19 @@ def test_int(numpy_fun, fastfunc_fun):
         (numpy.divide.at, fastfunc.divide.at),
     ],
 )
-def test_float(numpy_fun, fastfunc_fun):
+def test_dtypes(dtype_data, dtype_idx, numpy_fun, fastfunc_fun):
     numpy.random.seed(123)
 
-    a0 = numpy.zeros(10)
-    k = numpy.random.randint(10, size=5)
-    v = numpy.random.rand(5)
+    a0 = numpy.zeros(10, dtype=dtype_data)
+    k = numpy.random.randint(10, size=5, dtype=dtype_idx)
+    v = (17 * numpy.random.rand(5)).astype(dtype_data)
     numpy_fun(a0, k, v)
 
-    a1 = numpy.zeros(10)
+    a1 = numpy.zeros(10, dtype=dtype_data)
     fastfunc_fun(a1, k, v)
 
+    print(a0)
+    print(a1)
     assert numpy.all(a0 == a1)
     return
 
