@@ -26,6 +26,9 @@ clean:
 	@find . | grep -E "(__pycache__|\.pyc|\.pyo$\)" | xargs rm -rf
 	@rm -rf *.egg-info/ build/ dist/
 
+black:
+	black setup.py fastfunc/ test/*.py
+
 lint:
 	black --check setup.py fastfunc/ test/*.py
 	flake8 setup.py fastfunc/ test/*.py
