@@ -2,6 +2,8 @@
 #
 import os
 import codecs
+import subprocess
+import sys
 
 from setuptools import setup, Extension, find_packages
 
@@ -21,6 +23,13 @@ class get_pybind_include(object):
     """
 
     def __init__(self, user=False):
+        # https://github.com/pybind/python_example/issues/32
+        # https://stackoverflow.com/q/51323748/353337
+        try:
+            import pybind11  # noqa: F401
+        except ImportError:
+            if subprocess.call([sys.executable, "-m", "pip", "install", "pybind11"]):
+                raise RuntimeError("pybind11 install failed.")
         self.user = user
 
     def __str__(self):
