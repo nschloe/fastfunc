@@ -54,7 +54,9 @@ ext_modules = [
             get_pybind_include(user=True),
         ],
         libraries=[],
-        # extra_compile_args=['-std=c++11']
+        # -std=c++11 is needed for older compilers (see, e.g.,
+        # <https://github.com/nschloe/optimesh/issues/26>)
+        extra_compile_args=['-std=c++11']
     )
 ]
 
@@ -72,7 +74,7 @@ setup(
     url="https://github.com/nschloe/fastfunc",
     license=about["__license__"],
     platforms="any",
-    install_requires=["numpy", "pipdate", "pybind11"],
+    install_requires=["numpy", "pybind11"],
     classifiers=[
         about["__status__"],
         about["__license__"],
