@@ -56,7 +56,7 @@ ext_modules = [
         libraries=[],
         # -std=c++11 is needed for older compilers (see, e.g.,
         # <https://github.com/nschloe/optimesh/issues/26>)
-        extra_compile_args=['-std=c++11']
+        extra_compile_args=["-std=c++11"],
     )
 ]
 
