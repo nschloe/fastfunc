@@ -2,7 +2,7 @@
 #
 import os
 import codecs
-import subprocess
+import pybind11
 import sys
 
 import setuptools
@@ -25,18 +25,9 @@ class get_pybind_include(object):
     """
 
     def __init__(self, user=False):
-        # https://github.com/pybind/python_example/issues/32
-        # https://stackoverflow.com/q/51323748/353337
-        try:
-            import pybind11  # noqa: F401
-        except ImportError:
-            if subprocess.call([sys.executable, "-m", "pip", "install", "pybind11"]):
-                raise RuntimeError("pybind11 install failed.")
         self.user = user
 
     def __str__(self):
-        import pybind11
-
         return pybind11.get_include(self.user)
 
 
@@ -134,6 +125,7 @@ setup(
     license=about["__license__"],
     platforms="any",
     install_requires=["numpy", "pybind11>=2.2"],
+    setup_requires=["pybind11>=2.2"],
     classifiers=[
         about["__status__"],
         about["__license__"],
