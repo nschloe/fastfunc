@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-#
 import numpy
 
 # pylint: disable=import-error

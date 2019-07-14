@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-#
 from .__about__ import (
     __author__,
     __author_email__,
