@@ -1,11 +1,10 @@
-import os
 import codecs
+import os
 import sys
 
 import setuptools
+from setuptools import Extension, find_packages, setup
 from setuptools.command.build_ext import build_ext
-from setuptools import setup, Extension, find_packages
-
 
 # https://packaging.python.org/single_source_version/
 base_dir = os.path.abspath(os.path.dirname(__file__))
@@ -26,6 +25,7 @@ class get_pybind_include(object):
 
     def __str__(self):
         import pybind11
+
         return pybind11.get_include(self.user)
 
 
