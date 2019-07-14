@@ -1,6 +1,5 @@
 import os
 import codecs
-import pybind11
 import sys
 
 import setuptools
@@ -26,6 +25,7 @@ class get_pybind_include(object):
         self.user = user
 
     def __str__(self):
+        import pybind11
         return pybind11.get_include(self.user)
 
 
@@ -119,18 +119,18 @@ setup(
     description=("Fast numpy ufunc operations"),
     long_description=read("README.md"),
     long_description_content_type="text/markdown",
-    url="https://github.com/nschloe/fastfunc",
+    url=about["__url__"],
     license=about["__license__"],
     platforms="any",
     install_requires=["numpy", "pybind11>=2.2"],
     setup_requires=["pybind11>=2.2"],
+    python_requires=">3=",
     classifiers=[
         about["__status__"],
         about["__license__"],
         "Intended Audience :: Science/Research",
         "Operating System :: OS Independent",
         "Programming Language :: Python",
-        "Programming Language :: Python :: 2",
         "Programming Language :: Python :: 3",
         "Topic :: Scientific/Engineering",
         "Topic :: Software Development :: Libraries",
