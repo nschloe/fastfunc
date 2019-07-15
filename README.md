@@ -17,6 +17,9 @@ https://github.com/numpy/numpy/issues/11156).  Use `fastfunc` as a drop-in repla
 
 import fastfunc
 fastfunc.add.at(target, idx, vals)
+
+# If you really only need _add_, you can use
+# numpy.bincount(idx, weights=vals, minlength=target.shape[0])
 ```
 to get a speed-up by a factor of 40.
 
