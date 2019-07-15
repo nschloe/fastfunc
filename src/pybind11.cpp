@@ -32,8 +32,11 @@ at(
 };
 
 PYBIND11_MODULE(_fastfunc, m) {
-  // Check https://stackoverflow.com/questions/51115973/loop-over-template-types for
-  // shorter code
+  // Check
+  // https://stackoverflow.com/questions/51115973/loop-over-template-types
+  // https://github.com/pybind/pybind11/issues/1838
+  // for shorter code
+  //
 
   // int8 idx type
   m.def("_add_at", &at<int8_t, int8_t, std::plus<int8_t>>);
