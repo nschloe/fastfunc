@@ -6,6 +6,7 @@
 [![speedy](https://img.shields.io/badge/speedy-gonzales-ff69b4.svg?style=flat-square)](https://github.com/nschloe/fastfunc)
 [![PyPi Version](https://img.shields.io/pypi/v/fastfunc.svg?style=flat-square)](https://pypi.org/project/fastfunc)
 [![GitHub stars](https://img.shields.io/github/stars/nschloe/fastfunc.svg?style=flat-square&logo=github&label=Stars&logoColor=white)](https://github.com/nschloe/fastfunc)
+[![PyPi downloads](https://img.shields.io/pypi/dd/fastfunc.svg?style=flat-square)](https://pypistats.org/packages/fastfunc)
 
 [NumPy's own ufunc
 operations](https://docs.scipy.org/doc/numpy/reference/generated/numpy.ufunc.at.html)
@@ -17,6 +18,9 @@ https://github.com/numpy/numpy/issues/11156).  Use `fastfunc` as a drop-in repla
 
 import fastfunc
 fastfunc.add.at(target, idx, vals)
+
+# If you really only need _add_, you can use
+# numpy.bincount(idx, weights=vals, minlength=target.shape[0])
 ```
 to get a speed-up by a factor of 40.
 
