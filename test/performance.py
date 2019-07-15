@@ -1,4 +1,5 @@
 import numpy
+import numpy_groupies
 
 import fastfunc
 import perfplot
@@ -20,10 +21,38 @@ def fastfunc_add_at(data):
     return a
 
 
+def numpy_groupies_aggregate_sum(data):
+    a, i = data
+    return numpy_groupies.aggregate(i, a, func="sum")
+
+
+def numpy_bincount(data):
+    a, i = data
+    return numpy.bincount(i, weights=a, minlength=m)
+
+
+def setup(n):
+    a = numpy.random.rand(n)
+    i = numpy.random.randint(0, m, n)
+    # make sure to always include the last index for numpy_groupies
+    i[0] = m - 1
+    return a, i
+
+
 perfplot.show(
-    setup=lambda n: (numpy.random.rand(n), numpy.random.randint(m, size=n)),
-    kernels=[numpy_add_at, fastfunc_add_at],
-    labels=["numpy.add.at", "fastfunc.add.at"],
+    setup=setup,
+    kernels=[
+        numpy_add_at,
+        fastfunc_add_at,
+        numpy_groupies_aggregate_sum,
+        numpy_bincount,
+    ],
+    labels=[
+        "numpy.add.at",
+        "fastfunc.add.at",
+        'numpy_groupies.aggregate("sum")',
+        "numpy.bincount",
+    ],
     n_range=[2 ** k for k in range(25)],
     logx=True,
     logy=True,
