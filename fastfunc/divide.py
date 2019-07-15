@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-#
 from _fastfunc import _divide_at
 
 from .helpers import _operator_at

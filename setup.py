@@ -1,14 +1,10 @@
-# -*- coding: utf-8 -*-
-#
-import os
 import codecs
-import subprocess
+import os
 import sys
 
 import setuptools
+from setuptools import Extension, find_packages, setup
 from setuptools.command.build_ext import build_ext
-from setuptools import setup, Extension, find_packages
-
 
 # https://packaging.python.org/single_source_version/
 base_dir = os.path.abspath(os.path.dirname(__file__))
@@ -25,13 +21,6 @@ class get_pybind_include(object):
     """
 
     def __init__(self, user=False):
-        # https://github.com/pybind/python_example/issues/32
-        # https://stackoverflow.com/q/51323748/353337
-        try:
-            import pybind11  # noqa: F401
-        except ImportError:
-            if subprocess.call([sys.executable, "-m", "pip", "install", "pybind11"]):
-                raise RuntimeError("pybind11 install failed.")
         self.user = user
 
     def __str__(self):
@@ -130,17 +119,18 @@ setup(
     description=("Fast numpy ufunc operations"),
     long_description=read("README.md"),
     long_description_content_type="text/markdown",
-    url="https://github.com/nschloe/fastfunc",
+    url=about["__url__"],
     license=about["__license__"],
     platforms="any",
     install_requires=["numpy", "pybind11>=2.2"],
+    setup_requires=["pybind11>=2.2"],
+    python_requires=">3=",
     classifiers=[
         about["__status__"],
         about["__license__"],
         "Intended Audience :: Science/Research",
         "Operating System :: OS Independent",
         "Programming Language :: Python",
-        "Programming Language :: Python :: 2",
         "Programming Language :: Python :: 3",
         "Topic :: Scientific/Engineering",
         "Topic :: Software Development :: Libraries",

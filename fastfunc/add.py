@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-#
 from _fastfunc import _add_at
 
 from .helpers import _operator_at
