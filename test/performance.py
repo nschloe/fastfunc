@@ -37,7 +37,8 @@ def setup(n):
     return a, i
 
 
-perfplot.show(
+perfplot.save(
+    "out.svg",
     setup=setup,
     kernels=[
         numpy_add_at,
@@ -52,7 +53,5 @@ perfplot.show(
         "numpy.bincount",
     ],
     n_range=[2 ** k for k in range(25)],
-    logx=True,
-    logy=True,
     xlabel="num additions",
 )
