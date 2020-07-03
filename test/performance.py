@@ -1,7 +1,7 @@
 import numpy
-import numpy_groupies
 
 import fastfunc
+import numpy_groupies
 import perfplot
 
 m = 100
