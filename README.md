@@ -24,7 +24,7 @@ fastfunc.add.at(target, idx, vals)
 ```
 to get a speed-up by a factor of 40.
 
-![](https://nschloe.github.io/fastfunc/add.png)
+![](https://nschloe.github.io/fastfunc/add.svg)
 
 This is achieved by moving the operations to C++ using [pybind11](https://github.com/pybind/pybind11).
 
