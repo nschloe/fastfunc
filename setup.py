@@ -145,12 +145,7 @@ from pybind11.setup_helpers import Pybind11Extension, build_ext
 from setuptools import setup
 
 # https://github.com/pybind/python_example/
-ext_modules = [
-    Pybind11Extension(
-        "_fastfunc",
-        ["src/pybind11.cpp"]
-    )
-]
+ext_modules = [Pybind11Extension("_fastfunc", ["src/pybind11.cpp"])]
 
 if __name__ == "__main__":
     setup(

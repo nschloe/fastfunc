@@ -27,12 +27,10 @@ clean:
 	@rm -rf *.egg-info/ build/ dist/
 
 format:
-	isort -rc .
+	isort .
 	black .
-
-black:
-	black .
+	blacken-docs README.md
 
 lint:
 	black --check .
-	flake8 setup.py fastfunc/ test/*.py
+	flake8 .
