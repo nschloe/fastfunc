@@ -1,8 +1,8 @@
 import numpy
-
-import fastfunc
 import numpy_groupies
 import perfplot
+
+import fastfunc
 
 m = 100
 

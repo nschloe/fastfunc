@@ -1,24 +1,24 @@
-VERSION=$(shell python3 -c "import fastfunc; print(fastfunc.__version__)")
+VERSION=$(shell python3 -c "from configparser import ConfigParser; p = ConfigParser(); p.read('setup.cfg'); print(p['metadata']['version'])")
+
 
 default:
 	@echo "\"make publish\"?"
 
 tag:
-	# Make sure we're on the master branch
-	@if [ "$(shell git rev-parse --abbrev-ref HEAD)" != "master" ]; then exit 1; fi
-	@echo "Tagging v$(VERSION)..."
-	git tag v$(VERSION)
-	git push --tags
+	@if [ "$(shell git rev-parse --abbrev-ref HEAD)" != "main" ]; then exit 1; fi
+	@echo "Tagging release version v$(VERSION)..."
+	# git tag v$(VERSION)
+	# git push --tags
+	# Always create a github "release" right after tagging so it appears on zenodo
+	curl -H "Authorization: token `cat $(HOME)/.github-access-token`" -d '{"tag_name": "v$(VERSION)"}' https://api.github.com/repos/nschloe/fastfunc/releases
 
-upload: setup.py
-	# Make sure we're on the master branch
-	@if [ "$(shell git rev-parse --abbrev-ref HEAD)" != "master" ]; then exit 1; fi
-	rm -rf dist/*
-	python3 setup.py sdist
-	twine upload dist/*.tar.gz
-	# HTTPError: 400 Client Error: Binary wheel 'pygalmesh-0.2.0-cp27-cp27mu-linux_x86_64.whl' has an unsupported platform tag 'linux_x86_64'. for url: https://upload.pypi.org/legacy/
-	# python3 setup.py bdist_wheel --universal
-	# twine upload dist/*.whl
+upload: clean
+	# Make sure we're on the main branch
+	@if [ "$(shell git rev-parse --abbrev-ref HEAD)" != "main" ]; then exit 1; fi
+	# python3 setup.py sdist bdist_wheel
+	# https://stackoverflow.com/a/58756491/353337
+	python3 -m build --sdist .
+	twine upload dist/*
 
 publish: tag upload
 
@@ -27,12 +27,10 @@ clean:
 	@rm -rf *.egg-info/ build/ dist/
 
 format:
-	isort -rc .
+	isort .
 	black .
-
-black:
-	black .
+	blacken-docs README.md
 
 lint:
 	black --check .
-	flake8 setup.py fastfunc/ test/*.py
+	flake8 .
